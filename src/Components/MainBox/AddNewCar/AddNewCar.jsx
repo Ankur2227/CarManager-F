@@ -65,7 +65,7 @@ const AddNewCar = () => {
         },
       };
 
-      const { data } = await axios.post("http://localhost:5000/api/cars/add", formData, config);
+      const { data } = await axios.post("/api/cars/add", formData, config);
       console.log(data);
 
       // Reset form after successful submission

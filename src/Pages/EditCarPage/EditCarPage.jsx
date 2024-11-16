@@ -27,7 +27,7 @@ const EditCarPage = () => {
     const fetchCarDetails = async () => {
       setLoading(true);
       try {
-        const response = await axios.get(`http://localhost:5000/api/cars/carDetail/${id}`, {
+        const response = await axios.get(`/api/cars/carDetail/${id}`, {
           headers: {
             Authorization: `Bearer ${user.token}`,
           },
@@ -105,7 +105,7 @@ const EditCarPage = () => {
 
     setLoading(true);
     try {
-      await axios.put(`http://localhost:5000/api/cars/carDetail/${id}`, formData, {
+      await axios.put(`/api/cars/carDetail/${id}`, formData, {
         headers: {
           Authorization: `Bearer ${user.token}`,
           'Content-Type': 'multipart/form-data',
@@ -176,7 +176,7 @@ const EditCarPage = () => {
           <div className="image-preview">
             {carDetails.images.map((image, index) => (
               <div key={index} className="image-preview-item">
-                <img src={`http://localhost:5000/${image.replace(/\\/g, '/')}`} alt={`Car Image ${index + 1}`} />
+                <img src={`/${image.replace(/\\/g, '/')}`} alt={`Car Image ${index + 1}`} />
                 <button type="button" onClick={() => handleImageDelete(image)}>
                   Delete
                 </button>

@@ -19,7 +19,7 @@ const MyCars = () => {
     const fetchCars = async () => {
       setLoading(true);
       try {
-        const response = await axios.get('http://localhost:5000/api/cars/user-cars', {
+        const response = await axios.get('/api/cars/user-cars', {
           headers: {
             Authorization: `Bearer ${user.token}`,
           },
@@ -57,7 +57,7 @@ const MyCars = () => {
     const confirmDelete = window.confirm('Are you sure you want to delete this car?');
     if (confirmDelete) {
       try {
-        await axios.delete(`http://localhost:5000/api/cars/carDetail/${carId}`, {
+        await axios.delete(`/api/cars/carDetail/${carId}`, {
           headers: {
             Authorization: `Bearer ${user.token}`,
           },

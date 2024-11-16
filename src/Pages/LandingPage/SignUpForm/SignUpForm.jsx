@@ -40,7 +40,7 @@ const SignUpForm = () => {
       };
 
       const resp = await axios.post(
-        "http://localhost:5000/api/user/register",
+        "/api/user/register",
         { name, email, password, pic },
         config
       );

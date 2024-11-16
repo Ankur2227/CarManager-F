@@ -20,7 +20,7 @@ const CarDetailPage = () => {
     // Fetch car details only if the user is authenticated
     const fetchCarDetails = async () => {
       try {
-        const { data } = await axios.get(`http://localhost:5000/api/cars/carDetail/${id}`, {
+        const { data } = await axios.get(`/api/cars/carDetail/${id}`, {
           headers: {
             Authorization: `Bearer ${user.token}`, // Ensure the token is passed in headers
           },
@@ -58,7 +58,7 @@ const CarDetailPage = () => {
         {car.images && car.images.map((image, index) => (
           <div className="image-container" key={index}>
             <img
-              src={`http://localhost:5000/${image.replace(/\\/g, '/')}`} // Full URL for image
+              src={`/${image.replace(/\\/g, '/')}`} // Full URL for image
               alt={`Car image ${index + 1}`}
               className="car-image"
             />
