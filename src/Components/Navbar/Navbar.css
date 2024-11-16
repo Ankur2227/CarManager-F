@@ -1,0 +1,14 @@
+.navbar{
+    background-color: #B47B84;
+    margin: 0;
+    height: 8vh;
+    padding: 0 4vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 6px;
+}
+
+.navbar h1{
+    font-family: 'Kaushan Script', cursive;
+}

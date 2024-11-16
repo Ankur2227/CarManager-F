@@ -1,0 +1,28 @@
+.profile{
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    padding: 1vh 2vh;
+}
+.profile:hover{
+    cursor: pointer;
+    background-color: #8d575f;
+    border-radius: 6px;
+}
+.profile span{
+    margin: 0 2vh;
+}
+.profile-pic{
+    width: 4vh;
+    height: 4vh;
+    border-radius: 100%;
+}
+.profile-menu{
+    position: absolute;
+    top: 10vh;
+    right: 5vh;
+    padding: 0;
+    width: 26vh;
+    border-radius: 6px;
+    background-color: #FFF7F1;
+}

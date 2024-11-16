@@ -1,0 +1,40 @@
+.Landing-page-container{
+    background-image: url('../../../public/Screenshot 2024-02-04 100635.png');
+    background-size: cover;
+}
+.title{
+    font-size: 15vh; 
+    margin:0;
+    text-align:center;
+    color:#F9F7C9;
+    /* -webkit-text-stroke: 2px black; */
+    text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
+}
+
+.LandingPage{
+    margin: auto;
+    width: 100%;
+    height: 82vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+.LandingPageButton{
+    height: 50vh;
+    width: 50vh;
+    /* border-radius: 2rem; */
+    margin: 0 15vh;
+    border: none;
+    background-color: #80BCBD;
+    color: #F9F7C9;  
+    text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: inset 0 0 10px 5px #335555; /* Add inner shadow effect */
+    transition: box-shadow 0.3s ease; /* Add transition for smooth effect */
+}
+.LandingPageButton:hover{
+    box-shadow: inset 0 0 20px 10px #335555; /* Add inner shadow effect */
+}

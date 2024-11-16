@@ -1,0 +1,24 @@
+.HomePageContainer{
+    background-color: #FFE7E7;
+}
+.nav-container{
+    margin: 0;
+    padding: 1vh;
+    height: 8vh;
+}
+.Container{
+    display: flex;
+    flex-direction: row;
+}
+
+.side-container{
+    padding: 1vh;
+    width: 40vh;
+    height: 86vh;
+}
+
+.main-container{
+    padding: 1vh;
+    width: 170vh;
+    height: 86vh;
+}

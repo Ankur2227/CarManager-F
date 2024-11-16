@@ -1,0 +1,88 @@
+/* CarDetailPage.css */
+.car-detail-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    background-color: #FFE7E7; /* Use soft pink as the background */
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Adds some shadow for a floating effect */
+  }
+  
+  .car-title {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #B47B84; /* Use muted rose color for the title */
+    margin-bottom: 10px;
+  }
+  
+  .car-description {
+    font-size: 1.2rem;
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 20px;
+  }
+  
+  .car-tags {
+    font-size: 1.1rem;
+    color: #B47B84; /* Muted rose color for the tags */
+    margin-bottom: 20px;
+  }
+  
+  .car-images {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+  }
+  
+  .image-container {
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .car-image {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .car-image:hover {
+    transform: scale(1.05);
+  }
+  
+  /* Add some responsive design */
+  @media (max-width: 768px) {
+    .car-detail-container {
+      padding: 15px;
+    }
+  
+    .car-title {
+      font-size: 1.8rem;
+    }
+  
+    .car-description {
+      font-size: 1rem;
+    }
+  
+    .car-tags {
+      font-size: 1rem;
+    }
+  }
+  
+  /* Add styling for buttons, if needed */
+  .car-detail-button {
+    background-color: #B47B84; /* Muted rose */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+  }
+  
+  .car-detail-button:hover {
+    background-color: #FFE7E7; /* Light pink on hover */
+  }
+  

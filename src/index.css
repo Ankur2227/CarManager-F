@@ -1,0 +1,22 @@
+body {
+    font-family: 'Exo 2', sans-serif;
+    background-color: white;
+    margin: 0;  
+    padding: 1vh; 
+}
+
+h1{
+    margin: 0;
+}
+
+.button{
+    margin: 1vh 0;
+    line-height: 5vh;
+    padding: 0 2vh;
+    cursor: pointer;
+    caret-color: transparent;
+    border-radius: 6px;
+}
+.button:hover{
+    background-color: #CAA6A6;
+}

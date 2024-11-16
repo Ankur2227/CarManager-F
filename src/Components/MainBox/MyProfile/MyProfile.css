@@ -1,0 +1,21 @@
+.profile-container{
+    height: 82vh;
+    overflow-y: scroll;
+}
+.profile-container::-webkit-scrollbar {
+    display: none; /* Hide the scrollbar */
+}
+.profile-first{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2vh 8vh;
+}
+
+.profile-first-left{
+    width: 80vh;
+}
+
+.profile-first-right img{
+    width: 25vh;
+}

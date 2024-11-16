@@ -1,0 +1,130 @@
+/* MyCars.css */
+
+.my-cars-container {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+  
+  h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 20px;
+  }
+  
+  .search-bar {
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  .search-bar input {
+    padding: 10px;
+    font-size: 1.1rem;
+    width: 100%;
+    max-width: 500px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    outline: none;
+  }
+  
+  .cars-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
+  }
+  
+  .car-card {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: transform 0.3s ease;
+  }
+  
+  .car-card:hover {
+    transform: scale(1.05);
+  }
+  
+  .car-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+  }
+  
+  .car-details {
+    padding: 15px;
+  }
+  
+  .car-details h3 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+  }
+  
+  .car-details p {
+    font-size: 0.95rem;
+    color: #555;
+  }
+  
+  .car-tags {
+    margin-top: 10px;
+  }
+  
+  .car-tag {
+    display: inline-block;
+    background-color: #007bff;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 4px;
+    margin-right: 5px;
+    font-size: 0.9rem;
+  }
+  
+  .edit-icon {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: #fff;
+    border-radius: 50%;
+    padding: 5px;
+    cursor: pointer;
+  }
+  
+  .error-message {
+    color: #ff4d4d;
+    font-size: 1rem;
+    text-align: center;
+    margin-bottom: 15px;
+  }
+  .action-icons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .edit-icon,
+  .delete-icon {
+    cursor: pointer;
+    padding: 5px;
+    transition: transform 0.2s ease-in-out;
+  }
+  
+  .edit-icon:hover,
+  .delete-icon:hover {
+    transform: scale(1.1);
+  }
+  
+  .delete-icon {
+    color: red;
+  }
+  
+  .delete-icon:hover {
+    color: darkred;
+  }
+  
+  

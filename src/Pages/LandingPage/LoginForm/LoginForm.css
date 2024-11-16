@@ -1,0 +1,36 @@
+.LandingForms {
+    margin: 2vh 6vh;
+    display: flex;
+    flex-direction: column;
+    height: fit-content;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 6vh 0;
+    cursor: auto;
+}
+
+.LandingForms input{
+    border: none;
+    border-radius: 6px;
+    font-size: 1.2rem;
+    height: 1.8rem;
+    margin-bottom: 4vh;
+    padding: 1vh 2vh;
+}
+/* Remove default focus styling for input fields */
+input:focus {
+    outline: none; /* Remove the default focus outline (not recommended for accessibility) */
+    border-color: #ddd; /* Change border color when in focus */
+    /* Add any other styles you want to apply when the input is in focus */
+  }
+  
+.LandingForms button{
+    background-color: #AAD9BB;
+    border: none;
+    border-radius: 10px;
+    color: #00000099;
+    font-weight: 600;
+    padding: 1.5vh;
+    font-size: initial;
+    cursor: pointer;
+}
