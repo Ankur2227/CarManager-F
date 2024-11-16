@@ -61,6 +61,14 @@ const EditCarPage = () => {
     }));
   };
 
+  // Add new tag input field
+  const handleAddTag = () => {
+    setCarDetails((prevDetails) => ({
+      ...prevDetails,
+      tags: [...prevDetails.tags, ''], // Add a new empty tag
+    }));
+  };
+
   const handleImageUpload = (e) => {
     const files = e.target.files;
     if (files.length + carDetails.images.length <= 10) {
@@ -84,7 +92,7 @@ const EditCarPage = () => {
     // Append car details to formData
     formData.append('title', carDetails.title);
     formData.append('description', carDetails.description);
-    formData.append('tags', carDetails.tags.join(','));
+    formData.append('tags', carDetails.tags.join(',')); // Join the tags as a string
 
     // Append existing images and new images to formData
     carDetails.images.forEach((image) => {
@@ -151,6 +159,9 @@ const EditCarPage = () => {
               onChange={(e) => handleTagsChange(e, index)}
             />
           ))}
+          <button type="button" onClick={handleAddTag}>
+            Add Tag
+          </button>
         </div>
 
         <div className="form-group">

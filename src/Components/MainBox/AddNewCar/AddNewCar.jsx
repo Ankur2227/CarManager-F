@@ -7,7 +7,8 @@ const AddNewCar = () => {
   const { user } = useContext(UserContext); // Get the current user's info from context
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
-  const [tags, setTags] = useState("");
+  const [tags, setTags] = useState([]); // Change tags to an array
+  const [newTag, setNewTag] = useState(""); // For capturing the new tag input
   const [images, setImages] = useState([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
@@ -21,10 +22,22 @@ const AddNewCar = () => {
     setError("");
   };
 
+  const handleTagChange = (e) => {
+    setNewTag(e.target.value);
+  };
+
+  const handleTagAdd = (e) => {
+    if (e.key === "Enter" && newTag.trim() !== "") {
+      setTags((prevTags) => [...prevTags, newTag.trim()]);
+      setNewTag(""); // Clear input after adding tag
+      e.preventDefault(); // Prevent form submission when Enter is pressed
+    }
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    if (!title || !description || !tags) {
+    if (!title || !description || tags.length === 0) {
       setError("All fields are required.");
       return;
     }
@@ -39,7 +52,7 @@ const AddNewCar = () => {
       const formData = new FormData();
       formData.append("title", title);
       formData.append("description", description);
-      formData.append("tags", tags);
+      formData.append("tags", JSON.stringify(tags)); // Convert tags array to string
 
       images.forEach((image) => {
         formData.append("images", image); // Append each image
@@ -51,14 +64,15 @@ const AddNewCar = () => {
           Authorization: `Bearer ${user.token}`, // Assuming the user token is in context
         },
       };
-      console.log([...formData.entries()]);
-      const { data } = await axios.post(" http://localhost:5000/api/cars/add", formData, config);
+
+      const { data } = await axios.post("http://localhost:5000/api/cars/add", formData, config);
       console.log(data);
 
       // Reset form after successful submission
       setTitle("");
       setDescription("");
-      setTags("");
+      setTags([]);
+      setNewTag("");
       setImages([]);
       setError("");
       alert("Car added successfully!");
@@ -95,14 +109,22 @@ const AddNewCar = () => {
           ></textarea>
         </div>
         <div className="form-group">
-          <label htmlFor="tags">Tags (comma-separated):</label>
+          <label htmlFor="tags">Tags (Press Enter to add each tag):</label>
           <input
             type="text"
             id="tags"
-            value={tags}
-            onChange={(e) => setTags(e.target.value)}
+            value={newTag}
+            onChange={handleTagChange}
+            onKeyDown={handleTagAdd} // Add tag on Enter key press
             placeholder="e.g., SUV, Toyota, DealerName"
           />
+          <div className="tags-display">
+            {tags.map((tag, index) => (
+              <span key={index} className="car-tag">
+                {tag}
+              </span>
+            ))}
+          </div>
         </div>
         <div className="form-group">
           <label htmlFor="images">Upload Images:</label>

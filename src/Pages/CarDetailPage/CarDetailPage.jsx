@@ -38,6 +38,16 @@ const CarDetailPage = () => {
     return <p>Loading...</p>; // Show loading message while data is being fetched
   }
 
+  // Handle back to homepage navigation
+  const handleGoBack = () => {
+    navigate('/homepage'); // Navigates to homepage (or whichever page you want)
+  };
+
+  // Handle edit car details navigation
+  const handleEditCar = () => {
+    navigate(`/edit-car/${id}`); // Navigates to the edit car page using the car ID
+  };
+
   return (
     <div className="car-detail-container">
       <h2 className="car-title">{car.title}</h2>
@@ -54,6 +64,18 @@ const CarDetailPage = () => {
             />
           </div>
         ))}
+      </div>
+
+      <div className="buttons-container">
+        {/* Button to go back to homepage */}
+        <button onClick={handleGoBack} className="go-back-button">
+          Go Back to Homepage
+        </button>
+        
+        {/* Button to edit car details */}
+        <button onClick={handleEditCar} className="edit-car-button">
+          Edit Details
+        </button>
       </div>
     </div>
   );

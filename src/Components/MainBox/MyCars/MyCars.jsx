@@ -2,7 +2,6 @@ import React, { useState, useEffect, useContext } from 'react';
 import { useNavigate } from 'react-router-dom'; // Import useNavigate
 import axios from 'axios';
 import './MyCars.css';
-import EditIcon from '@mui/icons-material/Edit';
 import DeleteIcon from '@mui/icons-material/Delete'; // Import delete icon
 import { UserContext } from '../../../Context/Context';
 
@@ -53,12 +52,8 @@ const MyCars = () => {
     navigate(`/car-detail/${carId}`);
   };
 
-  const handleEditClick = (e, carId) => {
-    e.stopPropagation();  // Prevents the card click event from triggering
-    navigate(`/edit-car/${carId}`);
-  };
-
-  const handleDelete = async (carId) => {
+  const handleDelete = async (e, carId) => {
+    e.stopPropagation();
     const confirmDelete = window.confirm('Are you sure you want to delete this car?');
     if (confirmDelete) {
       try {
@@ -70,7 +65,7 @@ const MyCars = () => {
         // Filter out the deleted car from the state
         setCars(cars.filter((car) => car._id !== carId));
         alert('Car deleted successfully');
-        navigate('/my-cars'); // Redirect to MyCars page after successful deletion
+        navigate('/homepage'); // Redirect to MyCars page after successful deletion
       } catch (err) {
         console.error(err);
         setError('Failed to delete the car.');
@@ -112,18 +107,21 @@ const MyCars = () => {
                   <h3>{car.title}</h3>
                   <p>{car.description.slice(0, 100)}...</p>
                   <div className="car-tags">
-                    {car.tags.map((tag, index) => (
-                      <span key={index} className="car-tag">
-                        {tag}
-                      </span>
-                    ))}
+                    {car.tags && car.tags.length > 0 ? (
+                      car.tags.map((tag, index) => (
+                        <span key={index} className="car-tag">
+                          {tag}
+                        </span>
+                      ))
+                    ) : (
+                      <p>No tags available</p>
+                    )}
                   </div>
                 </div>
+
                 <div className="action-icons">
-                  <div className="edit-icon" onClick={(e) => handleEditClick(e, car._id)}>
-                    <EditIcon />
-                  </div>
-                  <div className="delete-icon" onClick={() => handleDelete(car._id)}>
+                  {/* Only delete button is visible */}
+                  <div className="delete-icon" onClick={(e) => handleDelete(e, car._id)}>
                     <DeleteIcon />
                   </div>
                 </div>
